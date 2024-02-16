@@ -1,12 +1,11 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import Home from '../pages/Catalog';
-import Catalog from '../pages/Catalog';
+import Home from '../pages/Home';
+
 import Detail from '../pages/Detail';
 
 const Routess = () => {
 
-    const renderCatalog = (props) => <Catalog {...props} />;
 
     return (
         <React.Fragment>
@@ -14,8 +13,8 @@ const Routess = () => {
             <Route path='/' exact component={Home} />
 
   
-            <Route path='/:category/search/:keyword' render={renderCatalog} />
-            <Route path='/:category' render={renderCatalog} />
+            <Route path='/:category/search/:keyword' />
+            <Route path='/:category' />
 
     
             <Route path='/:category/:id' component={Detail} />
